@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".slideshow").forEach((slideshow) => {
+          let images = slideshow.querySelectorAll("img");
+          let currentIndex = 0;
+
+          images.forEach((img, i) => {
+            img.style.opacity = i === 0 ? "1" : "0";
+            img.style.transition = "opacity 1s ease-in-out";
+          });
+
+          setInterval(() => {
+            images[currentIndex].style.opacity = "0";
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.opacity = "1";
+          }, 3000);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="nav-brand">
+        <img src="./Images/logo.png" alt="Logo" id="logo" />
+      </div>
+      <nav class="nav-links">
+        <a href="./index.html"
+          ><img src="./Images/home.png" alt="home" class="icon" /> Home</a
+        >
+        <a href="./destinations.html"
+          ><img
+            src="./Images/destinations.png"
+            alt="destinations"
+            class="icon"
+          />Destinations</a
+        >
+        <a href="./About.html"
+          ><img src="./Images/about.png" alt="About" class="icon" /> About Us
+        </a>
+        <a href="./Contact.html"
+          ><img src="./Images/contact.png" alt="contact" class="icon" /> Contact
+          Us</a
+        >
+      </nav>
+      <a href="./login.html" class="login-button"
+        ><img src="./Images/login.png" alt="Login Icon" class="icon"
+      /></a>
+      <button class="hamburger">
+        <img src="./Icons/hamburger.png" alt="Hamburger Icon" />
+      </button>
+    </header>
+
+    <div class="main-section">
+      <video autoplay muted loop class="background-video">
+        <source src="./Videos/V1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="travel container mt-4">
+      <h2 class="text-center">Popular Destinations</h2>
+      <div class="packages-container">
+        <div class="package-card">
+          <div class="slideshow">
+            <img src="Img/brazil1.webp" alt="Brazil Image 1" />
+            <img src="Img/brazil2.jpg" alt="Brazil Image 2" />
+            <img src="Img/brazil3.jpg" alt="Brazil Image 3" />
+          </div>
+          <div class="package-details">
+            <div class="package-title">Brazil</div>
+            <div class="description">
+              Explore the Amazon rainforest, Copacabana Beach, and Christ the
+              Redeemer.
+            </div>
+            <div class="price">Price: ₹85,000</div>
+            <div class="duration">Duration: 8 Days / 7 Nights</div>
+            <a href="checkout.html">
+              <button class="btn btn-info">Book Now</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="package-card">
+          <div class="slideshow">
+            <img src="./Img/india1.jpeg" alt="India Image 1" />
+            <img src="./Img/india2.jpeg" alt="India Image 2" />
+            <img src="./Img/india2.png" alt="India Image 3" />
+          </div>
+          <div class="package-details">
+            <div class="package-title">India</div>
+            <div class="description">
+              Experience the vibrant culture, historic monuments, and stunning
+              landscapes of India.
+            </div>
+            <div class="price">Price: ₹50,000</div>
+            <div class="duration">Duration: 7 Days / 6 Nights</div>
+            <a href="checkout.html">
+              <button class="btn btn-info">Book Now</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="package-card">
+          <div class="slideshow">
+            <img src="Img/Korea1.avif" alt="South Korea Image 1" />
+            <img src="Img/Korea2.jpg" alt="South Korea Image 2" />
+            <img src="Img/Korea3.jpg" alt="South Korea Image 3" />
+          </div>
+          <div class="package-details">
+            <div class="package-title">South Korea</div>
+            <div class="description">
+              Discover Seoul’s modern life, historic palaces, and K-pop culture.
+            </div>
+            <div class="price">Price: ₹75,000</div>
+            <div class="duration">Duration: 5 Days / 4 Nights</div>
+            <a href="checkout.html">
+              <button class="btn btn-info">Book Now</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="amenities container mt-5">
+      <h2 class="text-center">Our Amenities</h2>
+      <div class="amenities-list">
+        <div class="amenity-item">
+          <i class="fas fa-wifi"></i>
+          <span>Free Wi-Fi</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-user-tie"></i>
+          <span>Professional Tour Guides</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-hotel"></i>
+          <span>Luxury Accommodations</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-headset"></i>
+          <span>24/7 Customer Support</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-plane-arrival"></i>
+          <span>Airport Transfers</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-utensils"></i>
+          <span>Gourmet Dining</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-swimming-pool"></i>
+          <span>Swimming Pool</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-spa"></i>
+          <span>Spa & Wellness Center</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-car"></i>
+          <span>Car Rental Services</span>
+        </div>
+        <div class="amenity-item">
+          <i class="fas fa-bicycle"></i>
+          <span>Bike Rentals</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------- -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-about">
+          <h4>About Us</h4>
+          <p>
+            At TravelSphere, we craft unforgettable journeys, blending comfort,
+            adventure, and cultural experiences to create memories that last a
+            lifetime.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p>Email: support@travelsphere.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 TravelSphere. Your gateway to the world. All Rights
+          Reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

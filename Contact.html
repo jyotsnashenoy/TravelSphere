@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TraveleSphere</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    .contact-container {
+      max-width: 1000px;
+      width: 20%;
+      padding: 20px;
+      margin: 40px auto;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+
+    .contact-container h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #333;
+    }
+
+    .contact-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-container label {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .contact-container input,
+    .contact-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    .contact-container button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .contact-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="nav-brand">
+        <img src="./Images/logo.png" alt="Logo" id="logo" />
+      </div>
+      <nav class="nav-links">
+        <a href="./index.html"
+          ><img src="./Images/home.png" alt="home" class="icon" /> Home</a
+        >
+        <a href="./destinations.html"
+          ><img
+            src="./Images/destinations.png"
+            alt="destinations"
+            class="icon"
+          />Destinations</a
+        >
+        <a href="./About.html"
+          ><img src="./Images/about.png" alt="About" class="icon" /> About Us
+        </a>
+        <a href="./Contact.html"
+          ><img src="./Images/contact.png" alt="contact" class="icon" /> Contact
+          Us</a
+        >
+      </nav>
+      <a href="./login.html" class="login-button"
+        ><img src="./Images/login.png" alt="Login Icon" class="icon"
+      /></a>
+      <button class="hamburger">
+        <img src="./Icons/hamburger.png" alt="Hamburger Icon" />
+      </button>
+    </header>
+
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          alert("Your message has been sent successfully!");
+        });
+    </script>
+  </body>
+  <!-- ---------------------------------------------------------------------------------- -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h4>About Us</h4>
+        <p>
+          At TravelSphere, we craft unforgettable journeys, blending comfort,
+          adventure, and cultural experiences to create memories that last a
+          lifetime.
+        </p>
+      </div>
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <p>Email: support@travelsphere.com</p>
+        <p>Phone: +123 456 7890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2024 TravelSphere. Your gateway to the world. All Rights
+        Reserved.
+      </p>
+    </div>
+  </footer>
+</html>

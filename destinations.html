@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TraveleSphere</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="destinations.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".slideshow").forEach((slideshow) => {
+          let images = slideshow.querySelectorAll("img");
+          let currentIndex = 0;
+
+          images.forEach((img, i) => {
+            img.style.opacity = i === 0 ? "1" : "0";
+            img.style.transition = "opacity 1s ease-in-out";
+          });
+
+          setInterval(() => {
+            images[currentIndex].style.opacity = "0";
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.opacity = "1";
+          }, 3000);
+        });
+      });
+    </script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .packages-container {
+        max-width: 1300px;
+        justify-content: center;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .package-card {
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .slideshow {
+        position: relative;
+        width: 100%;
+        height: 220px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .slideshow img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: opacity 1s ease-in-out;
+      }
+
+      @keyframes slide {
+        0% {
+          left: 0;
+        }
+        33% {
+          left: -100%;
+        }
+        66% {
+          left: -200%;
+        }
+        100% {
+          left: 0;
+        }
+      }
+
+      .package-details {
+        text-align: center;
+      }
+
+      .package-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .price,
+      .duration {
+        font-size: 16px;
+        color: #555;
+      }
+
+      .description {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-brand">
+        <img src="./Images/logo.png" alt="Logo" id="logo" />
+      </div>
+      <nav class="nav-links">
+        <a href="./index.html"
+          ><img src="./Images/home.png" alt="home" class="icon" /> Home</a
+        >
+        <a href="./destinations.html"
+          ><img
+            src="./Images/destinations.png"
+            alt="destinations"
+            class="icon"
+          />Destinations</a
+        >
+        <a href="./About.html"
+          ><img src="./Images/about.png" alt="About" class="icon" /> About Us
+        </a>
+        <a href="./Contact.html"
+          ><img src="./Images/contact.png" alt="contact" class="icon" /> Contact
+          Us</a
+        >
+      </nav>
+      <a href="./login.html" class="login-button"
+        ><img src="./Images/login.png" alt="Login Icon" class="icon"
+      /></a>
+      <button class="hamburger">
+        <img src="./Icons/hamburger.png" alt="Hamburger Icon" />
+      </button>
+    </header>
+    <!-- ---------------------------------------------------------------------------------- -->
+
+    <div class="packages-container">
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="./Img/india1.jpeg" alt="India Image 1" />
+          <img src="./Img/india2.jpeg" alt="India Image 2" />
+          <img src="./Img/india2.png" alt="India Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">India</div>
+          <div class="description">
+            Experience the vibrant culture, historic monuments, and stunning
+            landscapes of India.
+          </div>
+          <div class="price">Price: ₹50,000</div>
+          <div class="duration">Duration: 7 Days / 6 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="./Img/aus1.jpg" alt="Australia Image 1" />
+          <img src="./Img/aus2.webp" alt="Australia Image 2" />
+          <img src="./Img/aus3.webp" alt="Australia Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Australia</div>
+          <div class="description">
+            Discover the Great Barrier Reef, Sydney Opera House, and unique
+            wildlife.
+          </div>
+          <div class="price">Price: ₹90,000</div>
+          <div class="duration">Duration: 6 Days / 5 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/brazil1.webp" alt="Brazil Image 1" />
+          <img src="Img/brazil2.jpg" alt="Brazil Image 2" />
+          <img src="Img/brazil3.jpg" alt="Brazil Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Brazil</div>
+          <div class="description">
+            Explore the Amazon rainforest, Copacabana Beach, and Christ the
+            Redeemer.
+          </div>
+          <div class="price">Price: ₹85,000</div>
+          <div class="duration">Duration: 8 Days / 7 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/canada1.jpeg" alt="Canada Image 1" />
+          <img src="Img/canada2.avif" alt="Canada Image 2" />
+          <img src="Img/canada3.jpg" alt="Canada Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Canada</div>
+          <div class="description">
+            Witness the beauty of Niagara Falls, the Rocky Mountains, and
+            vibrant Toronto.
+          </div>
+          <div class="price">Price: ₹95,000</div>
+          <div class="duration">Duration: 7 Days / 6 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/China1.webp" alt="China Image 1" />
+          <img src="Img/China2.png" alt="China Image 2" />
+          <img src="Img/China3.avif" alt="China Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">China</div>
+          <div class="description">
+            Visit the Great Wall, Forbidden City, and Shanghai’s futuristic
+            skyline.
+          </div>
+          <div class="price">Price: ₹80,000</div>
+          <div class="duration">Duration: 6 Days / 5 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/France1.webp" alt="France Image 1" />
+          <img src="Img/France2.webp" alt="France Image 2" />
+          <img src="Img/France3.webp" alt="France Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">France</div>
+          <div class="description">
+            Explore the Eiffel Tower, the Louvre, and the stunning French
+            Riviera.
+          </div>
+          <div class="price">Price: ₹1,10,000</div>
+          <div class="duration">Duration: 7 Days / 6 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/ger1.cms" alt="Germany Image 1" />
+          <img src="Img/ger2.webp" alt="Germany Image 2" />
+          <img src="Img/ger3.jpg" alt="Germany Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Germany</div>
+          <div class="description">
+            Discover Berlin’s history, Bavaria’s castles, and Oktoberfest
+            celebrations.
+          </div>
+          <div class="price">Price: ₹1,00,000</div>
+          <div class="duration">Duration: 7 Days / 6 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/Greece1.jpeg" alt="Greece Image 1" />
+          <img src="Img/Greece2.jpg" alt="Greece Image 2" />
+          <img src="Img/Greece3.webp" alt="Greece Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Greece</div>
+          <div class="description">
+            Marvel at the ancient ruins of Athens, whitewashed buildings in
+            Santorini.
+          </div>
+          <div class="price">Price: ₹95,000</div>
+          <div class="duration">Duration: 6 Days / 5 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/Indonesia1.webp" alt="Indonesia Image 1" />
+          <img src="Img/Indonesia2.jpg" alt="Indonesia Image 2" />
+          <img src="Img/Indonesia3.webp" alt="Indonesia Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Indonesia</div>
+          <div class="description">
+            Relax in Bali, visit Jakarta’s cultural sites, and see Komodo
+            dragons.
+          </div>
+          <div class="price">Price: ₹70,000</div>
+          <div class="duration">Duration: 5 Days / 4 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/Italy1.webp" alt="Italy Image 1" />
+          <img src="Img/Italy2.cms" alt="Italy Image 2" />
+          <img src="Img/Italy3.jpeg" alt="Italy Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Italy</div>
+          <div class="description">
+            Admire Rome’s Colosseum, Venice’s canals, and Tuscany’s countryside.
+          </div>
+          <div class="price">Price: ₹1,20,000</div>
+          <div class="duration">Duration: 8 Days / 7 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/Japan1.jpg" alt="Japan Image 1" />
+          <img src="Img/Japan2.jpg" alt="Japan Image 2" />
+          <img src="Img/Japan3.webp" alt="Japan Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Japan</div>
+          <div class="description">
+            Experience Kyoto’s temples, Tokyo’s neon streets, and cherry
+            blossoms.
+          </div>
+          <div class="price">Price: ₹1,15,000</div>
+          <div class="duration">Duration: 7 Days / 6 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/Mexico1.jpg" alt="Mexico Image 1" />
+          <img src="Img/Mexico2.avif" alt="Mexico Image 2" />
+          <img src="Img/Mexico3.webp" alt="Mexico Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Mexico</div>
+          <div class="description">
+            Explore Mayan ruins, enjoy Cancun beaches, and taste authentic
+            tacos.
+          </div>
+          <div class="price">Price: ₹85,000</div>
+          <div class="duration">Duration: 6 Days / 5 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/Korea1.avif" alt="South Korea Image 1" />
+          <img src="Img/Korea2.jpg" alt="South Korea Image 2" />
+          <img src="Img/Korea3.jpg" alt="South Korea Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">South Korea</div>
+          <div class="description">
+            Discover Seoul’s modern life, historic palaces, and K-pop culture.
+          </div>
+          <div class="price">Price: ₹75,000</div>
+          <div class="duration">Duration: 5 Days / 4 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/Spain1.webp" alt="Spain Image 1" />
+          <img src="Img/Spain2.jpeg" alt="Spain Image 2" />
+          <img src="Img/Spain3.jpeg" alt="Spain Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Spain</div>
+          <div class="description">
+            Visit Barcelona’s architecture, Madrid’s museums, and Ibiza’s
+            beaches.
+          </div>
+          <div class="price">Price: ₹1,05,000</div>
+          <div class="duration">Duration: 7 Days / 6 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/Thailand1.avif" alt="Thailand Image 1" />
+          <img src="Img/Thailand2.webp" alt="Thailand Image 2" />
+          <img src="Img/Thailand3.webp" alt="Thailand Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Thailand</div>
+          <div class="description">
+            Relax on Phuket’s beaches, visit Bangkok’s temples, and explore
+            Chiang Mai.
+          </div>
+          <div class="price">Price: ₹60,000</div>
+          <div class="duration">Duration: 5 Days / 4 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/Turkey1.jpeg" alt="Turkey Image 1" />
+          <img src="Img/Turkey2.webp" alt="Turkey Image 2" />
+          <img src="Img/Turkey3.cms" alt="Turkey Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">Turkey</div>
+          <div class="description">
+            Discover Istanbul’s mosques, Cappadocia’s hot air balloons, and
+            Pamukkale’s springs.
+          </div>
+          <div class="price">Price: ₹80,000</div>
+          <div class="duration">Duration: 7 Days / 6 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/uae1.jpeg" alt="UAE Image 1" />
+          <img src="Img/uae2.webp" alt="UAE Image 2" />
+          <img src="Img/uae3.jpg" alt="UAE Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">United Arab Emirates</div>
+          <div class="description">
+            Explore Dubai’s skyscrapers, Abu Dhabi’s cultural sites, and desert
+            safaris.
+          </div>
+          <div class="price">Price: ₹90,000</div>
+          <div class="duration">Duration: 6 Days / 5 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="package-card">
+        <div class="slideshow">
+          <img src="Img/uk1.jpeg" alt="UK Image 1" />
+          <img src="Img/uk2.png" alt="UK Image 2" />
+          <img src="Img/uk3.jpeg" alt="UK Image 3" />
+        </div>
+        <div class="package-details">
+          <div class="package-title">United Kingdom</div>
+          <div class="description">
+            Visit London’s landmarks, Scotland’s Highlands, and Oxford’s
+            historic streets.
+          </div>
+          <div class="price">Price: ₹1,10,000</div>
+          <div class="duration">Duration: 7 Days / 6 Nights</div>
+          <a href="checkout.html">
+            <button class="btn btn-info">Book Now</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------- -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-about">
+          <h4>About Us</h4>
+          <p>
+            At TravelSphere, we craft unforgettable journeys, blending comfort,
+            adventure, and cultural experiences to create memories that last a
+            lifetime.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p>Email: support@travelsphere.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 TravelSphere. Your gateway to the world. All Rights
+          Reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

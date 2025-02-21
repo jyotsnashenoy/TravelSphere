@@ -1,0 +1,36 @@
+.travel {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.travel-item {
+  padding: 10px;
+  text-align: center;
+  border-radius: 1px;
+}
+
+.travel-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.travel-item h3 {
+  margin: 10px 0;
+}
+
+.travel-item button {
+  background-color: #2191dc;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.travel-item button:hover {
+  background-color: #0b5383;
+}

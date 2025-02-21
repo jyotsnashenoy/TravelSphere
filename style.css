@@ -1,0 +1,308 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+header {
+  background-color: black;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 30px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-decoration: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links a:hover {
+  color: #c0c0c0;
+  text-decoration: none;
+}
+
+.icon {
+  height: 30px;
+  width: auto;
+}
+
+.login-button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  background: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hamburger img {
+  height: 20px;
+  width: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    z-index: 9;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+.main-section {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.packages-container {
+  justify-content: center;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.package-card {
+  flex: 0 0 350px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  white-space: normal;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  33% {
+    left: -100%;
+  }
+  66% {
+    left: -200%;
+  }
+  100% {
+    left: 0;
+  }
+}
+.travel h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.package-details {
+  text-align: center;
+}
+
+.package-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.price,
+.duration {
+  font-size: 16px;
+  color: #555;
+}
+
+.description {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+}
+/* ------------------------------------------------------------------------- */
+.amenities {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #edeef1;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.amenities h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.amenities-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid rgb(186, 182, 182);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.amenity-item:hover {
+  transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------------------- */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 10px;
+  font-family: Arial, sans-serif;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-about,
+.footer-contact {
+  flex-basis: 40%;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #555;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .main-title-container {
+    flex-direction: column;
+  }
+
+  .main-title {
+    padding: 40px;
+  }
+
+  .travel-item {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .travel-item img {
+    height: 180px;
+  }
+}
